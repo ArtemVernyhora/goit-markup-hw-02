@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   color: var(--main-color);
   font-family: "Roboto", sans-serif;
 }
@@ -22,13 +22,26 @@ body {
   --color-blue: #2196f3;
   --color-grey: #757575;
   --color-white: #ffffff;
+  --color-black: #000000;
+  --background-grey: #2f303a;
+  --btn-shadow: rgba(0, 0, 0, 0.15);
+  --btn-shadow-f: rgba(0, 0, 0, 0.15);
+  --btn-hover: #188ce8;
+  --color-footer: rgba(255, 255, 255, 0.6);
+  --color-button: #f5f4fa;
+  --color-footers: #2f303a;
+  --color-team-rgb: rgba(0, 0, 0, 0.12);
+  --color-team-rgba: rgba(0, 0, 0, 0.14);
+  --color-teams-rgb: rgba(0, 0, 0, 0.2);
+  --color-btn-primary: rgba(0, 0, 0, 0.1);
+  --color-btns-primary: rgba(0, 0, 0, 0.08);
 }
 
 /* Header  */
-.header-menu .current {
+.current:visited {
   color: var(--color-blue);
 }
-.header-menu a {
+.header-menu {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -37,9 +50,9 @@ body {
   color: var(--main-color);
 }
 
-.header-menu a:hover,
-.header-menu a:focus,
-.header-menu a:active {
+.header-menu:hover,
+.header-menu:focus,
+.header-menu:active {
   color: var(--color-blue);
 }
 
@@ -55,14 +68,14 @@ body {
 }
 
 .logo-accent-black {
-  color: #000000;
+  color: var(--color-black);
 }
 
 .logo-accent-white {
   color: var(--color-white);
 }
 
-.header-contact a {
+.header-contact {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -71,15 +84,15 @@ body {
   color: var(--color-grey);
 }
 
-.header-contact a:hover,
-.header-contact a:focus {
+.header-contact:hover,
+.header-contact:focus {
   color: var(--color-blue);
 }
 
 /* Hero */
 
 .hero {
-  background-color: #2f303a;
+  background-color: var(--background-grey);
 }
 
 .hero-title {
@@ -96,21 +109,22 @@ body {
 .hero-btn {
   font-family: inherit;
   background: var(--color-blue);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px var(--btn-shadow);
   border-radius: 4px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--color-white);
   cursor: pointer;
+  border-color: transparent;
 }
-.hero-btn:active {
-  background-color: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+.hero-btn:active,
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: var(--btn-hover);
+  box-shadow: 0px 4px 4px var(--btn-shadow-f);
   border-radius: 4px;
 }
 
@@ -120,7 +134,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #212121;
+  color: var(--main-color);
 }
 
 .benefits-text {
@@ -143,7 +157,7 @@ body {
 
 /* Team */
 .team {
-  background-color: #f5f4fa;
+  background-color: var(--color-button);
 }
 
 .team-title {
@@ -153,6 +167,12 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-color);
+}
+.team-item {
+  background-color: var(--color-white);
+  box-shadow: 0px 1px 3px var(--color-team-rgb),
+    0px 1px 1px var(--color-team-rgba), 0px 2px 1px var(--color-teams-rgb);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-name {
@@ -174,7 +194,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #2f303a;
+  background-color: var(--color-footers);
 }
 
 .footer-map {
@@ -191,24 +211,25 @@ body {
   font-style: normal;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-footer);
   text-decoration: none;
 }
 
 .button {
-  color: #212121;
-  background-color: #f5f4fa;
+  color: var(--main-color);
+  background-color: var(--color-button);
 }
 .button-primary {
   color: var(--color-white);
   background-color: var(--color-blue);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px var(--color-btn-primary),
+    0px 1px 2px var(--color-btns-primary), 0px 2px 2px var(--color-team-rgb);
 }
 
 /* Portfolio */
 
 .portfolio-btn {
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -217,6 +238,7 @@ body {
   color: var(--main-color);
   border-radius: 4px;
   cursor: pointer;
+  border-color: transparent;
 }
 .portfolio-btn:active,
 .portfolio-btn:hover,
@@ -226,6 +248,7 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  border-color: transparent;
 }
 .portfolio-title {
   font-weight: 700;
